@@ -35,13 +35,13 @@ function renderBook(book) {
 
     saveButton.addEventListener('click', () => {
         fetch('http://localhost:3001/updateBook', {
-        method: 'PATCH'
-        headers: {
+        method: 'PATCH',
+        header: {
             'Content-Type': 'application/json'
-        }
+        },
         body: JSON.stringify({
             id: book.id,
-            quantity: quantityInput.value 
+            quantity: quantityInput.value
         })
         })
     })
